@@ -1,14 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
+    const [num, setNum] = useState(0)
+    const incNumHandler = () => num < 5 && setNum(num + 1)
+    const resNumHandler = () => setNum(0)
+    return (
+        <div className="App">
+            <div>{num}</div>
+            <div>
+                <button onClick={incNumHandler}>inc</button>
+                <button onClick={resNumHandler}>res</button>
+            </div>
 
-
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;
