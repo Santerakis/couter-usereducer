@@ -4,11 +4,11 @@ import './App.css';
 const counterReducer = (counter: number, action: any) => {
     switch (action.type) {
         case 'add':
-            return counter + 1
+             return counter < 5 ?counter + 1 :counter
         case  'res':
             return 0
         default:
-            return  counter
+            return counter
     }
 }
 
@@ -26,7 +26,6 @@ function App() {
                 <button onClick={incNumHandler}>inc</button>
                 <button onClick={resNumHandler}>res</button>
             </div>
-
         </div>
     );
 }
